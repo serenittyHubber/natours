@@ -24,7 +24,8 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "echo pre commit"
+			"pre-commit": "echo pre commit",
+			"post-commit": "echo 🍰 commited"
 		}
 	}
 }
