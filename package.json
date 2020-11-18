@@ -27,5 +27,20 @@
 			"pre-commit": "echo pre commit",
 			"post-commit": "echo 🍰 commited"
 		}
+	},
+	"commitlint": {
+		"rules": {
+			"references-empty": [
+				2,
+				"never"
+			]
+		},
+		"parserPreset": {
+			"parserOpts": {
+				"issuePrefixes": [
+					"PROJ-"
+				]
+			}
+		}
 	}
 }
