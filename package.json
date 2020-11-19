@@ -42,7 +42,7 @@
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS --verbose",
             "pre-commit": "lint-staged && pretty-quick --staged",
-            "post-commit": "Commit done"
+            "post-commit": "echo commit done"
         }
     },
     "commitlint": {
