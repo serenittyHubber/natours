@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"pretest": "./node_modules/.bin/eslint --ignore-path .gitignore . --fix"
 	},
 	"repository": {
 		"type": "git",
@@ -24,8 +25,8 @@
 	},
 	"husky": {
 		"hooks": {
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-			"pre-commit": "echo pre commit",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS --verbose",
+			"pre-commit": "echo pre commit && npm run pretest",
 			"post-commit": "echo 🍰 commited"
 		}
 	},
@@ -39,9 +40,12 @@
 		"parserPreset": {
 			"parserOpts": {
 				"issuePrefixes": [
-					"PROJ-"
+					"ISSUE-"
 				]
 			}
 		}
+	},
+	"dependencies": {
+		"eslint": "^7.13.0"
 	}
 }
