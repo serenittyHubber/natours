@@ -1,4 +1,4 @@
-const express = require('express');
+const format = require('prettier-eslint');
 const dotenv = require('dotenv');
 
 const app = require('./app');
