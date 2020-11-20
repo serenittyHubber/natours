@@ -6,9 +6,7 @@
   "scripts": {
     "prettier": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src/**",
-    "lint-fix": "eslint src/** --fix",
-    "eslint:cache": "eslint --cache --fix"
+    "lint": "eslint src/**"
   },
   "repository": {
     "type": "git",
@@ -44,7 +42,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS --verbose",
-      "pre-commit": "prettier && eslint-plugin-prettier --fix",
+      "pre-commit": "npm run lint",
       "post-commit": "echo commit done"
     }
   },
@@ -63,7 +61,11 @@
       }
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.15"
+  },
   "lint-staged": {
     "*.js": "eslint --cache --fix"
   }
