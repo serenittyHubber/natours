@@ -9,6 +9,16 @@ const tourSchema = mongoose.Schema({
     type: Number,
     require: [true, 'Price cannot be empty'],
   },
+  priceDiscount: {
+    type: Number,
+    validate: {
+      validator: function(val) {
+        if (val <= this.price) {
+          return this.price - val;
+        }
+      },
+    },
+  },
   duration: {
     type: Number,
     required: [true, 'Duration cannot be null'],

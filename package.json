@@ -2,11 +2,13 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "nodemon .src/server.js",
     "prettier": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src/**"
+    "lint": "eslint src/**",
+    "debug": "ndb src/server.js"
   },
   "repository": {
     "type": "git",
