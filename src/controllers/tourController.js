@@ -10,37 +10,6 @@ exports.aliasTopTours = (req, res, next) => {
 };
 
 exports.getAllTours = catchAsync(async (req, res, next) => {
-  // const queryObj = { ...req.query };
-  // const deleteUnusedItems = ['page', 'sort', 'limit', 'fields'];
-  // deleteUnusedItems.forEach(el => delete queryObj[el]);
-  // let queryString = JSON.stringify(queryObj);
-
-  // queryString = queryString.replace(
-  //   '/\b(gte|gt|let|lt)\b/g',
-  //   match => `$${match}`,
-  // );
-
-  // let query = Tour.find(JSON.parse(queryString));
-
-  // if (req.query.sort) {
-  //   const sortBy = req.query.sort.split(',').join(' ');
-  //   query = query.sort(sortBy);
-  // } else {
-  //   query = query.sort('-createdAt');
-  // }
-
-  // if (req.query.fields) {
-  //   const fields = req.query.fields.split(',').join(' ');
-  //   query = query.select(fields);
-  // } else {
-  //   query = query.select('-__');
-  // }
-
-  // const page = req.query.page * 1 || 1;
-  // const limit = req.query.limit * 1 || 100;
-  // const skip = (page - 1) * limit;
-  // query = query.skip(skip).limit(limit);
-
   const apiFeatures = new APIFeatures(
     Tour.find(),
     req.query,
@@ -99,3 +68,5 @@ exports.deleteTour = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+exports.getStats = () => {};

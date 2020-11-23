@@ -27,6 +27,21 @@ class APIFeatures {
     }
     return this;
   }
+  limitFields() {
+    if (this.queryStr.fields) {
+      const fields = this.queryStr.fields.split(',').join(' ');
+      this.query = this.query.select(fields);
+    } else {
+      this.query = this.query.select('-__');
+    }
+    return this;
+  }
+  paginate() {
+    const page = this.queryStr.page * 1 || 1;
+    const limit = req.queryStr.limit * 1 || 100;
+    const skip = (page - 1) * limit;
+    this.query = this.query.skip(skip).limit(limit);
+  }
 }
 
 module.exports = APIFeatures;
