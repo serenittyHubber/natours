@@ -92,7 +92,7 @@ exports.getStats = async (req, res, next) => {
   } catch (err) {
     res.status(404).json({
       status: 'ok',
-      message: fail,
+      message: 'fail',
     });
   }
 };
